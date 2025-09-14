@@ -76,12 +76,12 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <div className={`w-2 h-2 rounded-full ${getVoiceStatusColor()} ${isConnected ? 'animate-pulse' : ''}`} />
-          <span className="text-xs font-mono text-text-secondary">
-            VOICE: {getVoiceStatusText()}
+          <span className="text-xs font-mono text-text-secondary" dir="rtl">
+            الصوت: {getVoiceStatusText()}
           </span>
           {isConnected && (
-            <Badge variant="outline" className="text-xs font-mono">
-              {voiceUsers.length} ACTIVE
+            <Badge variant="outline" className="text-xs font-mono" dir="rtl">
+              {voiceUsers.length} نشط
             </Badge>
           )}
         </div>
@@ -108,17 +108,17 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
           onClick={handleToggleVoice}
           variant={isConnected ? "destructive" : "default"}
           size="sm"
-          className="font-mono text-xs flex-1"
+          className="font-mono text-xs flex-1" dir="rtl"
         >
           {isConnected ? (
             <>
               <PhoneOff className="w-4 h-4 mr-1" />
-              DISCONNECT
+              قطع الاتصال
             </>
           ) : (
             <>
               <Phone className="w-4 h-4 mr-1" />
-              JOIN VOICE
+              انضم للصوت
             </>
           )}
         </Button>
@@ -132,17 +132,17 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
             onClick={toggleMute}
             variant={isMuted ? "destructive" : "outline"}
             size="sm"
-            className="font-mono text-xs flex-1"
+            className="font-mono text-xs flex-1" dir="rtl"
           >
             {isMuted ? (
               <>
                 <MicOff className="w-4 h-4 mr-1" />
-                MUTED
+                مكتوم
               </>
             ) : (
               <>
                 <Mic className="w-4 h-4 mr-1" />
-                LIVE
+                مباشر
               </>
             )}
           </Button>
@@ -152,17 +152,17 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
             onClick={toggleDeafen}
             variant={isDeafened ? "destructive" : "outline"}
             size="sm"
-            className="font-mono text-xs flex-1"
+            className="font-mono text-xs flex-1" dir="rtl"
           >
             {isDeafened ? (
               <>
                 <VolumeX className="w-4 h-4 mr-1" />
-                DEAF
+                أصم
               </>
             ) : (
               <>
                 <Volume2 className="w-4 h-4 mr-1" />
-                HEAR
+                اسمع
               </>
             )}
           </Button>
@@ -172,9 +172,9 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
       {/* Active Voice Users */}
       {isConnected && voiceUsers.length > 0 && (
         <div className="pt-3 border-t border-metallic/20">
-          <div className="text-xs font-mono text-text-muted mb-2 flex items-center gap-2">
+          <div className="text-xs font-mono text-text-muted mb-2 flex items-center gap-2" dir="rtl">
             <Radio className="w-3 h-3" />
-            VOICE PARTICIPANTS ({voiceUsers.length})
+            المشاركون في الصوت ({voiceUsers.length})
           </div>
           <div className="space-y-1 max-h-32 overflow-y-auto">
             {voiceUsers.map((user) => (
@@ -199,7 +199,7 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
                     {user.nickname}
                   </span>
                   {user.nickname === nickname && (
-                    <Badge variant="outline" className="text-xs">YOU</Badge>
+                    <Badge variant="outline" className="text-xs" dir="rtl">أنت</Badge>
                   )}
                 </div>
                 
@@ -232,11 +232,11 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
       {/* Voice Instructions */}
       {!isConnected && !connectionError && (
         <div className="pt-3 border-t border-metallic/20">
-          <div className="text-xs text-text-muted font-mono space-y-1">
-            <p>• Click "JOIN VOICE" to start voice communication</p>
-            <p>• Allow microphone access when prompted</p>
-            <p>• Use mute/deafen controls during conversation</p>
-            <p>• Voice chat is peer-to-peer encrypted</p>
+          <div className="text-xs text-text-muted font-mono space-y-1" dir="rtl">
+            <p>• انقر على "انضم للصوت" لبدء التواصل الصوتي</p>
+            <p>• اسمح بالوصول للميكروفون عند الطلب</p>
+            <p>• استخدم أدوات الكتم/الصمم أثناء المحادثة</p>
+            <p>• الدردشة الصوتية مشفرة من نظير إلى نظير</p>
           </div>
         </div>
       )}
@@ -244,9 +244,9 @@ const VoiceControls = ({ channelId, nickname }: VoiceControlsProps) => {
       {/* Connection Status */}
       {isConnected && (
         <div className="pt-3 border-t border-metallic/20">
-          <div className="text-xs text-text-muted font-mono flex items-center gap-2">
+          <div className="text-xs text-text-muted font-mono flex items-center gap-2" dir="rtl">
             <Wifi className="w-3 h-3 text-green-500" />
-            Voice chat active • P2P encrypted • Real-time communication
+            الدردشة الصوتية نشطة • مشفرة P2P • اتصال في الوقت الفعلي
           </div>
         </div>
       )}
