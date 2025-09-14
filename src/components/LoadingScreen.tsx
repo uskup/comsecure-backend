@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import ciaLogo from '@/assets/cia-logo.png';
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -39,26 +38,26 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         {/* CIA Logo */}
         <div className="flex justify-center mb-8">
           <img 
-            src={ciaLogo} 
-            alt="CIA Logo" 
+            src="https://i.postimg.cc/sXSXtxvW/Khaki-Muda-Sederhana-Grungy-Cermin-Foto-Band-Akustik-Sampul-Album.png" 
+            alt="نیروی قدس Logo" 
             className="w-24 h-24 opacity-80 animate-matrix-glow"
           />
         </div>
 
         {/* Agency Title */}
         <div className="space-y-2">
-          <h1 className="text-4xl md:text-6xl font-mono font-bold text-glow tracking-wider animate-flicker">
-            CENTRAL INTELLIGENCE
+          <h1 className="text-4xl md:text-6xl font-mono font-bold text-glow tracking-wider animate-flicker" dir="rtl">
+            نیروی قدس
           </h1>
-          <h2 className="text-2xl md:text-4xl font-mono font-bold text-metallic tracking-widest animate-matrix-glow">
-            SURVEILLANCE AGENCY
+          <h2 className="text-2xl md:text-4xl font-mono font-bold text-metallic tracking-widest animate-matrix-glow" dir="rtl">
+            سپاه پاسداران انقلاب اسلامی
           </h2>
         </div>
 
         {/* Loading Bar */}
         <div className="w-80 mx-auto space-y-4">
-          <div className="text-sm font-mono text-text-secondary tracking-wider">
-            INITIALIZING SECURE CONNECTION...
+          <div className="text-sm font-mono text-text-secondary tracking-wider" dir="rtl">
+            جاري تهيئة الاتصال الآمن...
           </div>
           <div className="h-1 bg-surface-elevated rounded-full overflow-hidden">
             <div 
@@ -67,7 +66,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
             />
           </div>
           <div className="text-xs font-mono text-text-muted">
-            {Math.round(progress)}% COMPLETE
+            {Math.round(progress)}% مكتمل
           </div>
         </div>
 
@@ -76,9 +75,9 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           <div className="animate-fade-in">
             <button
               onClick={handleEnter}
-              className="px-8 py-3 bg-gradient-to-r from-metallic to-metallic-bright text-black font-mono font-bold tracking-wider rounded-lg glow-hover transition-all duration-300 hover:scale-105"
+              className="px-8 py-3 bg-gradient-to-r from-metallic to-metallic-bright text-black font-mono font-bold tracking-wider rounded-lg glow-hover transition-all duration-300 hover:scale-105" dir="rtl"
             >
-              [ ENTER SYSTEM ]
+              [ دخول النظام ]
             </button>
           </div>
         )}
@@ -86,7 +85,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         {/* Matrix-style decoration */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-xs font-mono text-text-muted opacity-50">
           <div className="animate-flicker">
-            CLASSIFIED // AUTHORIZED PERSONNEL ONLY
+            سري // للموظفين المخولين فقط
           </div>
         </div>
       </div>

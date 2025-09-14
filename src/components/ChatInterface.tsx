@@ -375,21 +375,21 @@ const ChatInterface = () => {
               </AlertDialogTrigger>
               <AlertDialogContent className="bg-surface border-metallic/30">
                 <AlertDialogHeader>
-                  <AlertDialogTitle className="font-mono text-glow">
-                    Delete Message
+                  <AlertDialogTitle className="font-mono text-glow" dir="rtl">
+                    حذف الرسالة
                   </AlertDialogTitle>
-                  <AlertDialogDescription className="font-mono text-text-secondary">
-                    Are you sure you want to delete this message from {msg.nickname}? 
-                    This action will be logged for audit purposes.
+                  <AlertDialogDescription className="font-mono text-text-secondary" dir="rtl">
+                    هل أنت متأكد من حذف هذه الرسالة من {msg.nickname}؟
+                    سيتم تسجيل هذا الإجراء لأغراض التدقيق.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                  <AlertDialogCancel className="font-mono">Cancel</AlertDialogCancel>
+                  <AlertDialogCancel className="font-mono" dir="rtl">إلغاء</AlertDialogCancel>
                   <AlertDialogAction 
                     onClick={() => handleDeleteMessage(msg.id)}
-                    className="bg-destructive text-destructive-foreground font-mono"
+                    className="bg-destructive text-destructive-foreground font-mono" dir="rtl"
                   >
-                    Delete Message
+                    حذف الرسالة
                   </AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
@@ -404,28 +404,28 @@ const ChatInterface = () => {
     return (
       <div className="min-h-screen bg-black text-text-primary flex items-center justify-center">
         <div className="bg-surface border border-metallic/30 rounded-lg p-8 max-w-md w-full mx-4">
-          <h2 className="font-mono text-xl text-glow font-bold mb-6 text-center">
-            ENTER CODENAME
+          <h2 className="font-mono text-xl text-glow font-bold mb-6 text-center" dir="rtl">
+            أدخل الاسم الرمزي
           </h2>
           <div className="space-y-4">
             <Input
               type="text"
-              placeholder="Agent codename..."
+              placeholder="الاسم الرمزي للعميل..."
               value={nickname}
               onChange={(e) => setNickname(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleJoinWithNickname()}
               className="bg-surface-elevated border-metallic/30 text-text-primary placeholder:text-text-muted font-mono"
               maxLength={32}
             />
-            <div className="text-xs text-text-muted font-mono">
-              Use "ADMIN" as codename for administrative access
+            <div className="text-xs text-text-muted font-mono" dir="rtl">
+              استخدم "ADMIN" كاسم رمزي للوصول الإداري
             </div>
             <Button
               onClick={handleJoinWithNickname}
               disabled={!nickname.trim()}
-              className="w-full bg-gradient-to-r from-metallic to-metallic-bright text-black font-mono font-bold hover:scale-105 transition-all duration-300"
+              className="w-full bg-gradient-to-r from-metallic to-metallic-bright text-black font-mono font-bold hover:scale-105 transition-all duration-300" dir="rtl"
             >
-              INITIATE CONNECTION
+              بدء الاتصال
             </Button>
           </div>
         </div>
@@ -440,13 +440,13 @@ const ChatInterface = () => {
       <div className="w-64 bg-surface border-r border-metallic/20 flex flex-col">
         <div className="p-4 border-b border-metallic/20">
           <div className="flex items-center justify-between">
-            <h2 className="font-mono text-lg text-metallic font-bold tracking-wider">
-              CHANNELS
+            <h2 className="font-mono text-lg text-metallic font-bold tracking-wider" dir="rtl">
+              القنوات
             </h2>
             {isAdmin && (
-              <Badge variant="outline" className="text-xs font-mono text-glow border-metallic/50">
+              <Badge variant="outline" className="text-xs font-mono text-glow border-metallic/50" dir="rtl">
                 <Shield className="w-3 h-3 mr-1" />
-                ADMIN
+                مدير
               </Badge>
             )}
           </div>
@@ -473,7 +473,7 @@ const ChatInterface = () => {
                   <span>{channel.name}</span>
                 </div>
                 <div className="text-xs text-text-muted mt-1">
-                  {activeUsers.length} agents
+                  {activeUsers.length} عميل
                 </div>
               </button>
             ))}
@@ -484,10 +484,10 @@ const ChatInterface = () => {
           <Button 
             variant="outline" 
             size="sm" 
-            className="w-full font-mono text-xs bg-surface-elevated border-metallic/30 hover:bg-metallic/10"
+            className="w-full font-mono text-xs bg-surface-elevated border-metallic/30 hover:bg-metallic/10" dir="rtl"
           >
             <Plus className="w-4 h-4 mr-2" />
-            NEW CHANNEL
+            قناة جديدة
           </Button>
         </div>
         
@@ -506,11 +506,11 @@ const ChatInterface = () => {
           <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col">
             <div className="bg-surface-elevated border-b border-metallic/20 p-4">
               <TabsList className="bg-surface border-metallic/30">
-                <TabsTrigger value="chat" className="font-mono text-xs">
-                  CHAT
+                <TabsTrigger value="chat" className="font-mono text-xs" dir="rtl">
+                  دردشة
                 </TabsTrigger>
-                <TabsTrigger value="admin" className="font-mono text-xs">
-                  ADMIN PANEL
+                <TabsTrigger value="admin" className="font-mono text-xs" dir="rtl">
+                  لوحة الإدارة
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -531,8 +531,8 @@ const ChatInterface = () => {
       {/* Users Sidebar */}
       <div className="w-56 bg-surface border-l border-metallic/20 flex flex-col">
         <div className="p-4 border-b border-metallic/20">
-          <h3 className="font-mono text-sm text-metallic font-bold tracking-wider">
-            ACTIVE AGENTS
+          <h3 className="font-mono text-sm text-metallic font-bold tracking-wider" dir="rtl">
+            العملاء النشطون
           </h3>
         </div>
         
@@ -571,11 +571,11 @@ const ChatInterface = () => {
             <div className="flex items-center gap-3">
               <Hash className="w-5 h-5 text-metallic" />
               <div>
-                <h3 className="font-mono text-lg text-glow font-bold">
+                <h3 className="font-mono text-lg text-glow font-bold" dir="rtl">
                   #{selectedChannel?.name}
                 </h3>
-                <p className="text-xs text-text-muted">
-                  Secure channel • End-to-end encrypted • Voice enabled
+                <p className="text-xs text-text-muted" dir="rtl">
+                  قناة آمنة • مشفرة من طرف إلى طرف • الصوت مفعل
                 </p>
               </div>
             </div>
@@ -600,7 +600,7 @@ const ChatInterface = () => {
           <div className="flex gap-3">
             <Input
               type="text"
-              placeholder={`Message #${selectedChannel?.name}...`}
+              placeholder={`رسالة #${selectedChannel?.name}...`}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
@@ -614,8 +614,8 @@ const ChatInterface = () => {
               <Send className="w-4 h-4" />
             </Button>
           </div>
-          <div className="text-xs text-text-muted font-mono mt-2">
-            Messages are encrypted • Voice chat available • Admin monitoring active
+          <div className="text-xs text-text-muted font-mono mt-2" dir="rtl">
+            الرسائل مشفرة • الدردشة الصوتية متاحة • المراقبة الإدارية نشطة
           </div>
         </div>
       </>
